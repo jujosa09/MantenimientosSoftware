@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Factorial {
+public class Factorial {
+    public int compute (int value){
+        return 1;
+    }
 }
