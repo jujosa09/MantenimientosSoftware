@@ -1,12 +1,22 @@
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 class FactorialTest {
+    private Factorial factorial;
+    @BeforeEach
+    public void setup(){
+        factorial = new Factorial();
+    }
+    @AfterEach
+    public void finish(){
+        factorial = null;
+    }
     @Test
     public void shouldComputeReturnOneIfTheNumberIsZero(){
-        var factorial = new Factorial();
         int expectedValue=1;
         int obtainedValue= factorial.compute(0);
 
@@ -14,7 +24,6 @@ class FactorialTest {
     }
     @Test
     public void shouldComputeReturnOneIfTheNumberIsOne(){
-        var factorial = new Factorial();
         int expectedValue=1;
         int obtainedValue= factorial.compute(1);
 
@@ -22,7 +31,6 @@ class FactorialTest {
     }
     @Test
     public void shouldComputeReturn2IfTheNumberIsTwo(){
-        var factorial = new Factorial();
         int expectedValue=2;
         int obtainedValue= factorial.compute(2);
 
@@ -30,7 +38,6 @@ class FactorialTest {
     }
     @Test
     public void shouldComputeReturn6IfTheNumberIsThree(){
-        var factorial = new Factorial();
         int expectedValue=6;
         int obtainedValue= factorial.compute(3);
 
@@ -38,7 +45,6 @@ class FactorialTest {
     }
     @Test
     public void shouldComputeReturn720IfTheNumberIs6(){
-        var factorial = new Factorial();
         int expectedValue=720;
         int obtainedValue= factorial.compute(6);
 
@@ -46,7 +52,6 @@ class FactorialTest {
     }
     @Test
     public void shouldComputeReturnErrorIfTheNumberIsNegative(){
-        var factorial = new Factorial();
         assertThrows(RuntimeException.class, () -> factorial.compute(-1 ));
     }
 
