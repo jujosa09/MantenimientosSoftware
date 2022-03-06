@@ -13,10 +13,10 @@ public class Fibonacci {
             throw new RuntimeException("El valor que has introducido es erroneo: " + valor);
         }else if (valor == 1){
             resultado = 0;
-        }else if(valor == 2 || valor == 3){
+        }else if(valor == 2){
             resultado = 1;
         }else{
-            resultado = compute(valor-1) + compute(valor -2);
+            resultado = compute(valor-1) + compute(valor-2);
         }
         return resultado;
     }
