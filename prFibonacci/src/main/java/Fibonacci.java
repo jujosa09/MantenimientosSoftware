@@ -9,7 +9,6 @@
 public class Fibonacci {
     public int compute(int valor) {
         int resultado;
-
         if(valor < 1){
             throw new RuntimeException("El valor que has introducido es erroneo: " + valor);
         }else if (valor == 1){
